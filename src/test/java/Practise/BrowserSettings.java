@@ -42,7 +42,7 @@ public class BrowserSettings extends BaseClass {
 	public void titleVerification()
 	{
 		 System.out.println(driver.getTitle());
-	     Assert.assertEquals(driver.getTitle(), "Googley");
+	     Assert.assertEquals(driver.getTitle(), "Google");
 		
 	}
 	

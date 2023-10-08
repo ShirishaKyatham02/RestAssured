@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.time.Duration;
+
 public class BaseClass {
 	
 	public WebDriver driver;
@@ -18,7 +20,7 @@ public class BaseClass {
 	    options.addArguments("disable-notifications");
 	    options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
 	    driver = new ChromeDriver(options);
-		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+	    driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
 		driver.manage().window().maximize();
 		tdriver.set(driver);
 		return getDriver();

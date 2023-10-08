@@ -1,5 +1,7 @@
 package Practise;
 
+import java.util.Calendar;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -11,6 +13,7 @@ import org.testng.annotations.Test;
 
 import Base.BaseClass;
 import ListenersJava.AllureListener;
+import ReRunScripts.ReRunScripts;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
@@ -32,7 +35,7 @@ public class BrowserSettings extends BaseClass {
 
     }
 	
-	@Test(priority = 1, description="Verification of Title")
+	@Test(priority = 1, description="Verification of Title", retryAnalyzer = ReRunScripts.class)
 	@Description("Step Description 1 - Verification of Title")
 	@Epic("Epic from JIRA")
 	@Feature("Feature 1")
@@ -43,6 +46,8 @@ public class BrowserSettings extends BaseClass {
 	{
 		 System.out.println(driver.getTitle());
 	     Assert.assertEquals(driver.getTitle(), "Google");
+	     
+	     
 		
 	}
 	
